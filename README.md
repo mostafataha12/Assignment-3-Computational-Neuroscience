@@ -73,33 +73,6 @@ Training progress will be logged every 20 epochs, showing the loss.
 After training, the model’s accuracy on the dataset will be displayed.
 A test prediction for the phrase "the cat is" will be shown, expecting "fluffy" as the output.
 
-Example output:
-Vocabulary (20 words): {'all': 0, 'ant': 1, 'bird': 2, ..., 'fluffy': 9, ...}
-Expected target words: ['fluffy', 'fast', 'high', 'water', 'day']
-Phrase: 'the cat is fluffy', Target word: 'fluffy', Target index: 9
-...
-Epoch [200/200], Step [1/2], Loss: 0.0xxx
-Accuracy on the dataset: 100.0%
-Test phrase: 'the cat is', Input indices: [16, 3, 12]
-Output logits shape: torch.Size([1, 20]), Predicted index: 9, Predicted word: fluffy
-
-
-Modify the Dataset:To use a different dataset, edit the phrases list in text_rnn_fixed.py. Ensure each phrase has exactly four words, and update hyperparameters if the vocabulary size changes significantly.
-
-
-File Structure
-
-text_rnn_fixed.py: Main script containing the RNN model, dataset processing, training, and prediction logic.
-README.md: This file, providing project documentation.
-
-Notes
-
-The dataset is small (5 phrases), so the model may overfit. For larger datasets, consider adding dropout to the RNN (e.g., dropout=0.2) or adjusting hyperparameters.
-The model is designed for word-level prediction. For character-level prediction or more complex tasks, the code would need modifications.
-If you encounter issues like incorrect predictions, check the vocabulary printout and ensure the target indices align with num_classes.
-
-Troubleshooting
-
 IndexError: Target X is out of bounds: Ensure num_classes equals vocab_size. The provided code sets this correctly, but modifications to the dataset may require updates.
 Incorrect Prediction: Increase num_epochs (e.g., to 300) or adjust learning_rate (e.g., to 0.0005) if the model underfits. Verify the vocabulary mappings in the debug output.
 **Key
