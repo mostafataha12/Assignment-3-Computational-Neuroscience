@@ -65,15 +65,3 @@ Usage
 Run the Script:The main script is text_rnn_fixed.py. To train the model and test it, run:
 python text_rnn_fixed.py
 
-
-Expected Output:
-
-The script will print the vocabulary and target indices for debugging.
-Training progress will be logged every 20 epochs, showing the loss.
-After training, the model’s accuracy on the dataset will be displayed.
-A test prediction for the phrase "the cat is" will be shown, expecting "fluffy" as the output.
-
-IndexError: Target X is out of bounds: Ensure num_classes equals vocab_size. The provided code sets this correctly, but modifications to the dataset may require updates.
-Incorrect Prediction: Increase num_epochs (e.g., to 300) or adjust learning_rate (e.g., to 0.0005) if the model underfits. Verify the vocabulary mappings in the debug output.
-**Key
-
